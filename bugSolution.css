@@ -1,0 +1,17 @@
+The solution is to ensure that units are consistent and that the expression is correctly structured.  For instance, instead of mixing percentages and pixels, using only percentages or pixels would solve most issues. Adding parentheses to explicitly define the order of operations can also improve reliability. 
+
+Example:
+
+Instead of this (might fail):
+```css
+width: calc(100% - 50px);
+```
+Use this (more reliable):
+```css
+width: calc(100% - 50px);
+/* or */
+width: calc((100% - 50px)); 
+/*or if you want all px*/
+width: calc((100vw - 50px));
+```
+This ensures that the subtraction happens correctly before the percentage calculation.
